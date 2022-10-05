@@ -137,7 +137,7 @@ class Alien(pg.sprite.Sprite):
 
 class Plane(pg.sprite.Sprite):
 
-    speed = 2
+    speed = 5
     animcycle = 12
     images = []
 
