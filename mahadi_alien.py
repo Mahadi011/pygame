@@ -112,7 +112,7 @@ class Player(pg.sprite.Sprite):
 class Alien(pg.sprite.Sprite):
     """An alien space ship. That slowly moves down the screen."""
 
-    speed = 2
+    speed = 4
     animcycle = 12
     images = []
 
