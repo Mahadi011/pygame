@@ -498,7 +498,7 @@ def main(winstyle=0):
     start_game = False
     while not start_game:
         
-        if menu_state == False:
+        if menu_state == False:  # When it is in the main menu
             if resume_button.draw(screen):
                 start_game= True
                 # game_paused = False
@@ -506,8 +506,9 @@ def main(winstyle=0):
                 menu_state = True
             if quit_button.draw(screen):
                 pg.quit()
-        elif menu_state == True:
-            all.update()
+        elif menu_state == True: # when it will be in the option menu
+            pg.display.flip()
+            
             plane_button.draw(screen)
             baloon_button.draw(screen)
             otheralien_button.draw(screen)
