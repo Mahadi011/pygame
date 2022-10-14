@@ -429,7 +429,7 @@ def main(winstyle=0):
     pg.mouse.set_visible(True)
 
     # create the background, tile the bgd image
-    bgdtile = pg.transform.scale(load_image("background3.gif"), (640,480))
+    bgdtile = pg.transform.scale(load_image("background3.gif"),(640,480))
     background = pg.Surface(SCREENRECT.size)
     for x in range(0, SCREENRECT.width, bgdtile.get_width()):
         background.blit(bgdtile, (x, 0))
@@ -497,7 +497,7 @@ def main(winstyle=0):
     menu_state = False
     start_game = False
     while not start_game:
-        
+        screen.blit(background, (0, 0))
         if menu_state == False:  # When it is in the main menu
             if resume_button.draw(screen):
                 start_game= True
@@ -507,13 +507,13 @@ def main(winstyle=0):
             if quit_button.draw(screen):
                 pg.quit()
         elif menu_state == True: # when it will be in the option menu
-            pg.display.flip()
-            
+                       
             plane_button.draw(screen)
             baloon_button.draw(screen)
             otheralien_button.draw(screen)
             if back_button.draw(screen):
                 menu_state = False
+                
 
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
